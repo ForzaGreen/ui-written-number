@@ -1,10 +1,78 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Digit Number Converter</title>
-</head>
-<body>
-<script src="bundle.js"></script>
+    <head>
+        <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
+        <title>Digit Number Converter</title>
+        <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+        <link rel="stylesheet" href="http://bootswatch.com/superhero/bootstrap.min.css">
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+        <script src="https://unpkg.com/vue"></script>
+    </head>
+    <body>
+		<script src="bundle.js"></script>
 
-</body>
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">FG</a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="#">En</a>
+                        </li>
+                        <li>
+                            <a href="#">Fr</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- <div id = "temperature"></div> -->
+        <div class="container" id="app">
+        	<div class="col-md-6 col-md-offset-3 form-group">
+			  <label class="control-label" for="inputLarge">Large input</label>
+			  <input class="form-control input-lg text-center" v-model="myNumber" type="number" id="inputLarge">
+			</div>
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3" role="main">
+                    <p class="lead text-center">{{myWrittenNumber}}</p>
+                </div>
+            </div>
+        </div>
+        <footer class="navbar-fixed-bottom">
+            <div class="container">
+                <div class="row">
+                    <p style="text-align:center;">Built with 
+                        <span class="glyphicon glyphicon-heart text-danger" aria-hidden="true"></span> by ForzaGreen.
+                    </p>
+                </div>
+            </div>
+        </footer>
+        <script type="text/javascript">
+        	Vue.config.devtools = true;
+			var app = new Vue({
+					el: '#app', 
+					data: {
+						myNumber: 93,
+						lang: 'fr'
+					},
+					computed: {
+						myWrittenNumber: function(){	
+							console.log(this.myNumber);	
+							w = writtenNumber(this.myNumber, {lang: this.lang});
+							written = w.replace(w[0], w[0].toUpperCase())
+							return written;
+						}
+					}
+				});
+        </script>
+    </body>
 </html>

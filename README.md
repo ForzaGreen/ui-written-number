@@ -14,6 +14,7 @@ module.exports = writtenNumber;
 ```
 ## UI
 [Bootswatch](https://bootswatch.com/), which is based on the [Bootstrap](http://getbootstrap.com/) framework.
+The flags are from [flag-icon-css](https://github.com/lipis/flag-icon-css) library.
 
 ## MVC Controller
 The Controller in the app is [Vue.js](https://vuejs.org/).

@@ -1,70 +1,69 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
-        <title>Digit Number Converter</title>
-        <link rel="icon" sizes="32x32" href="favicon.ico">
-    </head>
-    <body>
-        <link rel="stylesheet" href="css/bootstrap.min.css">
-        <script src="js/jquery-1.10.2.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-        <script src="js/vue"></script>
-		<script src="js/bundle.js"></script>
+<head>
+	<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
+	<title>Digit Number Converter</title>
+	<link rel="icon" sizes="32x32" href="favicon.ico">
+</head>
+<body>
 
-        <nav class="navbar navbar-default">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="#">FG</a>
-                </div>
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li>
-                            <a href="#">En</a>
-                        </li>
-                        <li>
-                            <a href="#">Fr</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-        <div class="container" id="app">
-        	<div class="col-md-6 col-md-offset-3 form-group">
-			  <label class="control-label" for="inputLarge">Large input</label>
-			  <input class="form-control input-lg text-center" v-model="myNumber" type="number" id="inputLarge">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<script src="js/jquery-1.10.2.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/vue"></script>
+	<script src="js/bundle.js"></script>
+	<div id="app">
+		<nav class="navbar navbar-default">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="">FG</a>
+				</div>
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav navbar-right">
+						<li><a :class="['btn', lang==='en'?'btn-success':'']" v-on:click="lang='en'">En</a></li>
+						<li><a :class="['btn', lang==='es'?'btn-success':'']" v-on:click="lang='es'">Es</a></li>
+						<li><a :class="['btn', lang==='fr'?'btn-success':'']" v-on:click="lang='fr'">Fr</a></li>
+					</ul>
+				</div>
 			</div>
-            <div class="row">
-                <div class="col-md-6 col-md-offset-3" role="main">
-                    <p class="lead text-center">{{myWrittenNumber}}</p>
-                </div>
-            </div>
-        </div>
-        <footer class="navbar-fixed-bottom">
-            <div class="container">
-                <div class="row">
-                    <p style="text-align:center;">Built with 
-                        <span class="glyphicon glyphicon-heart text-danger" aria-hidden="true"></span> by ForzaGreen.
-                    </p>
-                </div>
-            </div>
-        </footer>
-        <script type="text/javascript">
-        	Vue.config.devtools = true;
-			var app = new Vue({
-					el: '#app', 
-					data: {
-						myNumber: 93,
-						lang: 'fr'
-					},
-					computed: {
-						myWrittenNumber: function(){	
+		</nav>
+		<div class="container">
+			<div autofocus="autofocus" class="col-md-6 col-md-offset-3 form-group">
+				<label class="control-label" for="inputLarge"></label>
+				<input autofocus="autofocus" class="form-control input-lg text-center" v-model="myNumber" type="number" id="inputLarge">
+			</div>
+			<div class="row">
+				<div class="col-md-6 col-md-offset-3" role="main">
+					<p class="lead text-center">{{myWrittenNumber}}</p>
+				</div>
+			</div>
+		</div>
+		<footer class="navbar-fixed-bottom">
+			<div class="container">
+				<div class="row">
+					<p style="text-align:center;">Built with 
+						<span class="glyphicon glyphicon-heart text-danger" aria-hidden="true"></span> by ForzaGreen.
+					</p>
+				</div>
+			</div>
+		</footer>
+	</div>
+	<script type="text/javascript">
+		Vue.config.devtools = true;
+		var app = new Vue({
+			el: '#app', 
+			data: {
+				myNumber: 93,
+				lang: 'fr'
+			},
+			computed: {
+				myWrittenNumber: function(){	
 							// console.log(this.myNumber);	
 							w = writtenNumber(this.myNumber, {lang: this.lang});
 							written = w.replace(w[0], w[0].toUpperCase())
@@ -72,6 +71,6 @@
 						}
 					}
 				});
-        </script>
-    </body>
+	</script>
+</body>
 </html>

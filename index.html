@@ -44,13 +44,13 @@
 		<div class="container">
 			<div class="row">
 				<div class="btn-group btn-group-justified">
-					<a :class="['btn btn-lg', lang==='en'?'btn-success':'']" v-on:click="lang='en'">
+					<a :class="['btn btn-lg', lang==='en'?'btn-success':'']" v-on:click="lang='en'" title="English">
 						<span class="flag-icon flag-icon-gb"></span>
 					</a>
-					<a :class="['btn btn-lg', lang==='es'?'btn-success':'']" v-on:click="lang='es'">
+					<a :class="['btn btn-lg', lang==='es'?'btn-success':'']" v-on:click="lang='es'" title="Español">
 						<span class="flag-icon flag-icon-es"></span>
 					</a>
-					<a :class="['btn btn-lg', lang==='fr'?'btn-success':'']" v-on:click="lang='fr'">
+					<a :class="['btn btn-lg', lang==='fr'?'btn-success':'']" v-on:click="lang='fr'" title="Français">
 						<span class="flag-icon flag-icon-fr"></span>
 					</a>
 				</div>

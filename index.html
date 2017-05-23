@@ -14,19 +14,19 @@
 	<script src="js/vue"></script>
 	<script src="js/bundle.js"></script>
 	<style>
+		.form-control {
+			color: #ffffff;
+			background-color: #2B3B4A;
+		}
 		.btn-lg {
 			font-size: 27px;
 		}
 		.input-lg {
-			height: 52px;
-			padding: 62px 24px;
+			height: 100px;
+			padding: 0px 24px;
 			font-size: 99px;
 			line-height: 1.3333333;
 			border-radius: 0;
-		}
-		.form-control {
-			color: #ffffff;
-			background-color: #2B3B4A;
 		}
 		#myWrittenNumber {
 			font-size: 42.5px;
@@ -56,10 +56,13 @@
 				</div>
 			</div>
 
-			<div class="row col-md-6 col-md-offset-3 form-group">
-				<label class="control-label" for="inputLarge"></label>
-				<input class="form-control input-lg text-center" v-model="myNumber" type="number" id="inputLarge">
+			<div class="row">
+				<div class="col-md-6 col-md-offset-3 form-group">
+					<label class="control-label" for="inputLarge"></label>
+					<input class="form-control input-lg text-center" v-model="myNumber" type="number" id="inputLarge">
+				</div>				
 			</div>
+
 			<div class="row">
 				<div class="col-md-6 col-md-offset-3" role="main">
 					<p id="myWrittenNumber" class="lead text-center">{{myWrittenNumber}}</p>

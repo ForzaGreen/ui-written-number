@@ -18,3 +18,6 @@ The flags are from [flag-icon-css](https://github.com/lipis/flag-icon-css) libra
 
 ## MVC Controller
 The Controller in the app is [Vue.js](https://vuejs.org/).
+
+## License
+MIT

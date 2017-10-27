@@ -2,7 +2,7 @@
 UI to convert numbers to words
 
 ## JS Converter
-This uses the [js-written-number](https://github.com/yamadapc/js-written-number) library.
+This uses the [js-written-number](https://github.com/yamadapc/js-written-number) library to convert number to text.
 To require it from the browser, the [Browserify](http://browserify.org/) tool is used:
 ```
 $ browserify main.js -o bundle.js --s written-number
